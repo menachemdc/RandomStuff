@@ -1,0 +1,26 @@
+<% if @place.errors.present? %>
+	<% @place.errors.full_messages.each do |msg| %>
+	<p><%= msg %></p>
+	<% end %>
+	<% end %>
+<%= form_for @place do |f| %>
+	<p>
+		<%= f.label :name %>
+		<%= f.text_field :name %>
+	</p>
+	<p>
+		<%= f.label :location %>
+		<%= f.text_field :location %>
+	</p>
+	<p>
+		<%= f.label :activity %>
+		<%= f.select :activity, ["hike", "chill", "study"] %>
+	</p>
+	<p>
+		<%= f.label :rating %>
+		<%= f.text_field :rating %>
+	</p>
+	<p>
+		<%= f.submit %>
+	</p>
+<% end %>

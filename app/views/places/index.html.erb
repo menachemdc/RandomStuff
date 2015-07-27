@@ -1,0 +1,12 @@
+<h1> Hey Bru </h1>
+<% @places.each do |place| %>
+	<p>
+	<%= link_to place.name, place_path(place) %>
+	<%= link_to 'Destroy', place_path(place),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %>
+	</p>
+
+<% end %>
+
+<%= link_to 'New place', new_place_path %>
